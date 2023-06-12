@@ -17,10 +17,6 @@ public class TestBase {
         Configuration.baseUrl = "https://demoqa.com";
     }
 
-    @BeforeEach
-    void addListener() {
-        SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
-    }
 
     @AfterEach
     public void tearDown() {
