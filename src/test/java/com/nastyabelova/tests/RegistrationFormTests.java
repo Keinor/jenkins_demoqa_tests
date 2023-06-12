@@ -11,14 +11,12 @@ import org.junit.jupiter.api.Test;
 /**
  * Проверка заполнения формы регистрации студента
  */
-@Epic("demoqa.com/automation-practice-form")
+
 public class RegistrationFormTests extends TestBase {
 
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test()
-    @DisplayName("Тест для проверки заполнении формы регистрации студента")
-    @Story("Заполнение формы")
     public void fillRegistrationFormTests() {
         registrationPage.openPage();
         registrationPage.typeFirstName(TestDataHelper.firstName)
