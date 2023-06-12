@@ -31,8 +31,10 @@ public class RegistrationPage {
 
     public void openPage() {
         open("/automation-practice-form");
-        zoom(0.8);
+        zoom(0.7);
         formTitle.shouldHave(text(TestDataHelper.FORM_TITLE));
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
     }
 
     public RegistrationPage typeFirstName(String value) {
