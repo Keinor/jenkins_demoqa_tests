@@ -18,17 +18,7 @@ import static java.lang.String.format;
 
 public class RegistrationPage {
 
-    private final SelenideElement formTitle = $(".practice-form-wrapper"),
-            firstNameInput = $("#firstName"),
-            lastNameInput = $("#lastName"),
-            emailInput = $("#userEmail"),
-            userNumberInput = $("#userNumber"),
-            subjectsInput = $("#subjectsInput"),
-            uploadPicture = $("#uploadPicture"),
-            addressArea = $("#currentAddress"),
-            stateOption = $("#react-select-3-input"),
-            cityOption = $("#react-select-4-input"),
-            submitForm = $("#submit");
+    private final SelenideElement formTitle = $(".practice-form-wrapper"), firstNameInput = $("#firstName"), lastNameInput = $("#lastName"), emailInput = $("#userEmail"), userNumberInput = $("#userNumber"), subjectsInput = $("#subjectsInput"), uploadPicture = $("#uploadPicture"), addressArea = $("#currentAddress"), stateOption = $("#react-select-3-input"), cityOption = $("#react-select-4-input"), submitForm = $("#submit");
     public CalenderComponent calender = new CalenderComponent();
 
     @Step("Открыли главную страницу")
@@ -36,10 +26,9 @@ public class RegistrationPage {
         open("/automation-practice-form");
         zoom(0.7);
         formTitle.shouldHave(text(TestDataHelper.FORM_TITLE));
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
-        step("Комментарий",()->{
-            System.out.println("Удалили футер с рекламой, перекрывающий кнопку Submit");
+        step("Удалили футер с рекламой, перекрывающий кнопку Submit", () -> {
+            executeJavaScript("$('#fixedban').remove()");
+            executeJavaScript("$('footer').remove()");
         });
     }
 
@@ -126,9 +115,7 @@ public class RegistrationPage {
             String expectedValue = expectedData.get(keyTd);
             String actualValueTd = line.$("td", 1).text();
 
-            softly.assertThat(actualValueTd)
-                    .as(format("\nTable: %s contains %s, but expected %s", keyTd, expectedValue, actualValueTd))
-                    .isEqualTo(expectedValue);
+            softly.assertThat(actualValueTd).as(format("\nTable: %s contains %s, but expected %s", keyTd, expectedValue, actualValueTd)).isEqualTo(expectedValue);
         }
         softly.assertAll();
     }

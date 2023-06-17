@@ -29,8 +29,6 @@ public class TestBase {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
     }
 
-
-
     @AfterEach
     public void tearDown() {
         Attach.screenshotAs("Last screenshot");
