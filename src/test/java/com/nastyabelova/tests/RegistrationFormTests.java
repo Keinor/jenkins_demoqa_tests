@@ -22,10 +22,7 @@ public class RegistrationFormTests extends TestBase {
     @DisplayName("Тест для проверки заполнении формы регистрации студента")
     @Story("Заполнение формы")
     public void fillRegistrationFormTests() {
-        step("Open registration form",()->{
         registrationPage.openPage();
-        });
-        step("Fill form",()->{
         registrationPage.typeFirstName(TestDataHelper.firstName)
                 .typeLastName(TestDataHelper.lastName)
                 .typeEmail(TestDataHelper.email)
@@ -40,7 +37,7 @@ public class RegistrationFormTests extends TestBase {
                 .typeCity(TestDataHelper.CITY)
                 .calender.setDate(TestDataHelper.DAY, TestDataHelper.MONTH, TestDataHelper.YEAR);
         registrationPage.submitFormRegistration();
-        });
+
         step("Check form results",()->{
         registrationPage.checkResultsData(TestDataHelper.expectedData);
         });
