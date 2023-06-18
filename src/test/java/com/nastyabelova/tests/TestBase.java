@@ -18,7 +18,7 @@ public class TestBase {
         String url = System.getProperty("url","selenoid.autotests.cloud/wd/hub");
         String browserSize = System.getProperty("browserSize","1920x1080");
         String browser = System.getProperty("browser","firefox");
-        String version = System.getProperty("version","97.0");
+        String version = System.getProperty("version","98.0");
 
 //        System.out.println(browser);
 //        System.out.println(version);
