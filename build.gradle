@@ -19,14 +19,12 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
-    testImplementation (
-            "com.github.javafaker:javafaker:1.0.2",
+    testImplementation("com.github.javafaker:javafaker:1.0.2",
             'com.codeborne:selenide:6.12.3',
             'io.qameta.allure:allure-selenide:2.21.0',
             'org.junit.jupiter:junit-jupiter:5.9.2',
             'org.slf4j:slf4j-simple:2.0.5',
-            'org.assertj:assertj-core:3.24.2'
-    )
+            'org.assertj:assertj-core:3.24.2')
 }
 tasks.test {
     useJUnitPlatform()
@@ -43,10 +41,8 @@ tasks.withType(Test) {
         }
     }
 }
-task properties_test(type:Test){
-    useJUnitPlatform{
+task properties_test(type: Test) {
+    useJUnitPlatform {
         include("properties")
-        include("properties1")
-
     }
 }

@@ -15,24 +15,21 @@ public class TestBase {
     @BeforeAll
     @Tag("properties")
     static void beforeAll() {
-        String url = System.getProperty("url","selenoid.autotests.cloud/wd/hub");
-        String browserSize = System.getProperty("browserSize","1920x1080");
-        String browser = System.getProperty("browser","firefox");
-        String version = System.getProperty("version","98.0");
-
-//        System.out.println(browser);
-//        System.out.println(version);
+        String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub");
+        String browserSize = System.getProperty("browserSize", "1920x1080");
+        String browser = System.getProperty("browser", "firefox");
+        String version = System.getProperty("version", "98.0");
 
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = browserSize;
         Configuration.timeout = 10000;
-        Configuration.remote = "https://user1:1234@"+url;
-        Configuration.browser=browser;
+        Configuration.remote = "https://user1:1234@" + url;
+        Configuration.browser = browser;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
         capabilities.setCapability("enableVideo", true);
-        capabilities.setCapability("browserVersion",version);
+        capabilities.setCapability("browserVersion", version);
         Configuration.browserCapabilities = capabilities;
     }
 
