@@ -5,6 +5,7 @@ import com.nastyabelova.pages.RegistrationPage;
 import io.qameta.allure.Epic;
 import io.qameta.allure.Story;
 import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 /**
@@ -16,6 +17,7 @@ public class RegistrationFormTests extends TestBase {
     RegistrationPage registrationPage = new RegistrationPage();
 
     @Test()
+    @Tag("properties1")
     @DisplayName("Тест для проверки заполнении формы регистрации студента")
     @Story("Заполнение формы")
     public void fillRegistrationFormTests() {
