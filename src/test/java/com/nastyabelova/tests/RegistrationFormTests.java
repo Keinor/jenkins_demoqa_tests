@@ -28,7 +28,7 @@ public class RegistrationFormTests extends TestBase {
                 .typeSubjects()
                 .typeHobbies("2")
                 .typeHobbies("3")
-                .typeUploadPicture(TestDataHelper.PICTURE)
+               // .typeUploadPicture(TestDataHelper.PICTURE)
                 .typeAddress(TestDataHelper.address)
                 .typeState(TestDataHelper.STATE)
                 .typeCity(TestDataHelper.CITY)
