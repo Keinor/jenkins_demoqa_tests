@@ -2,8 +2,10 @@ package com.nastyabelova.tests;
 
 import com.codeborne.selenide.Configuration;
 import com.codeborne.selenide.logevents.SelenideLogger;
+import com.nastyabelova.config.CredentialsConfig;
 import com.nastyabelova.helpers.Attach;
 import io.qameta.allure.selenide.AllureSelenide;
+import org.aeonbits.owner.ConfigFactory;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.BeforeEach;
@@ -20,10 +22,15 @@ public class TestBase {
         String browser = System.getProperty("browser", "firefox");
         String version = System.getProperty("version", "98.0");
 
+        /**
+         *Объявляем переменную с типом интерфейс для логина/пароля
+         */
+        CredentialsConfig credentials = ConfigFactory.create(CredentialsConfig.class);
+
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = browserSize;
         Configuration.timeout = 10000;
-        Configuration.remote = "https://user1:1234@" + url;
+        Configuration.remote = "https://" + credentials.login() + ":" + credentials.password() + "@" + url;
         Configuration.browser = browser;
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
