@@ -1,6 +1,5 @@
 package com.nastyabelova.config;
 
-
 import org.aeonbits.owner.Config;
 
 @Config.Sources({"classpath:config/credentials.properties"})
