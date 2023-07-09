@@ -19,8 +19,8 @@ public class TestBase {
     static void beforeAll() {
         String url = System.getProperty("url", "selenoid.autotests.cloud/wd/hub");
         String browserSize = System.getProperty("browserSize", "1920x1080");
-        String browser = System.getProperty("browser", "firefox");
-        String version = System.getProperty("version", "98.0");
+        String browser = System.getProperty("browser", "chrome");
+        String version = System.getProperty("version", "100.0");
 
         /**
          *Объявляем переменную с типом интерфейс для логина/пароля
